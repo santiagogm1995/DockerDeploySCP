@@ -1,6 +1,8 @@
 
-FROM python:3.8-slim
+FROM python:3.8-slim as build
 COPY app.py /
+COPY prop.ini /
+COPY requirements.txt /
 RUN 	apt-get update \
 	&& apt-get install --assume-yes wget \ 
 	&& apt-get install --assume-yes gnupg \
@@ -11,9 +13,13 @@ RUN 	apt-get update \
 	&& apt-get --assume-yes install nodejs \
 	&& apt-get --assume-yes install npm \
 	&& apt-get --assume-yes install git \
-	&& pip install flask \
+	&& pip install -r requirements.txt \
 	&& npm i -g --unsafe-perm mbt \
 	&& npm install --global @ui5/cli 
+
+EXPOSE 8080
+
+WORKDIR /
 
 ENTRYPOINT [ "python" ]
 

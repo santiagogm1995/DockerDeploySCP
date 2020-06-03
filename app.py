@@ -28,9 +28,7 @@ def deployCF(request):
     user = cofig['DEFAULT']['USER']
     passwd = cofig['DEFAULT']['PASSWORD']
 
-    print(user)
-    print(passwd)
-    #os.system("git clone")
+    os.system("git clone https://" + user + ":" + passwd + "@github.com/santiagogm1995/Trash.git")
     #os.chdir("dir")
     #os.system()
     #os.system("mbt ....")
@@ -44,5 +42,5 @@ def deployNeo(request):
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0')
+    app.run(host="0.0.0.0" ,port=8080)
 
