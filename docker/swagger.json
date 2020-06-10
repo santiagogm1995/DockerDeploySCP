@@ -1,0 +1,52 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "API for deploy SAP Applications",
+        "description": "Move your app forward with the Uber API",
+        "version": "1.0.0"
+    },
+    "host": "localhost",
+    "basePath": "/",
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/deploy": {
+            "get": {
+                "summary": "Deploy UI5 application in SCP",
+                "description": "The deploy endpoint do three principal steps:\n1. Get source from GOGs repository.\n2. Build the MTA (Multitarget Aplication)\n3. Deploy the application with Cloud foundry client or Neo client.\n",
+                "parameters": [
+                    {
+                        "name": "env",
+                        "in": "query",
+                        "required": true,
+                        "description": "Possible values:\n * `CF` - Cloud Foundry environment\n * `Neo` - Neo environment\n",
+                        "type": "string"
+                    },
+                    {
+                        "name": "user",
+                        "in": "query",
+                        "required": true,
+                        "description": "Registered user in TheCide\n",
+                        "type": "string"
+                    },
+                    {
+                        "name": "project",
+                        "in": "query",
+                        "required": true,
+                        "description": "Project to be searched in the repository\n",
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "Deploy"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    }
+}
