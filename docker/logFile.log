@@ -1,5 +1,0 @@
-INFO:werkzeug: * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
-INFO:root:Create folder --> apps/santiago/Trash
-INFO:root:Cloning repository from --> https://santiagogm1995:XipJF836mvueUiy@github.com/santiagogm1995/Trash.git 
-INFO:werkzeug:10.0.2.15 - - [10/Jun/2020 12:12:28] "[37mPOST /deploy?env=CF&user=santiago&project=Trash HTTP/1.1[0m" 200 -
-INFO:werkzeug:10.0.2.15 - - [10/Jun/2020 12:12:34] "[37mGET /logs HTTP/1.1[0m" 200 -
