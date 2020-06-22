@@ -3,6 +3,8 @@ FROM python:3.8-slim as build
 COPY app.py /
 COPY prop.ini /
 COPY requirements.txt /
+COPY swagger.json /
+
 RUN apt-get update && apt-get upgrade -y 
 
 RUN	apt-get install --assume-yes wget \ 
